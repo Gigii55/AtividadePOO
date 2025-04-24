@@ -12,9 +12,6 @@ public class Dicas {
 		
 	    Boolean acertou = false;
 	    
-	    
-	    
-	    
 	    while (true) { 
 	    	
 	    	 String tenta = scanner.nextLine();
@@ -44,9 +41,6 @@ public class Dicas {
 	                }
 	            }
 	    	
-	    	
-           
-
            
         }
 	
