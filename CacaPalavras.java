@@ -1,39 +1,43 @@
-package atividade;
+package Atividade;
+
+import java.util.Scanner;
 
 public class CacaPalavras {
+ 
+	public void inicia() {
+		
+		Scanner scanner = new Scanner (System.in);
+		Metodos metodo = new Metodos ();
+		Dicas tenta = new Dicas();
 
-	public static void main(String[] args) {
+		int cont  = 0;
 		
-		SelecionarPalavras palavra = new SelecionarPalavras ();
-		PreencheTabuleiro preenche = new PreencheTabuleiro();
-		ColocaPalavraNoTabuleiro coloca = new ColocaPalavraNoTabuleiro ();
-		ImprimirTabuleiro imprime = new ImprimirTabuleiro ();	
-		Dicas dica = new Dicas();
-		DicaParaDuasPalavras dica2 = new DicaParaDuasPalavras ();
+		System.out.println("com quantas palavras você deseja jogar? (1 ou 2)");
+		int tipo = scanner.nextInt();
+		String[] armazena = new String [tipo];
 		
-		char tabuleiro [] [] = new char [10][10];
+		metodo.preencheTabuleiro();
 		
-		String palavraSelecionada = palavra.selecionarPalavra();
-		String palavraSelecionada2 = palavra.selecionarPalavra();
+			while (cont<tipo) {
+				
+				armazena [cont] = metodo.selecionarPalavra();
+				metodo.colocaPalavra(armazena[cont]);
+				cont++;
+			
+			}
 		
-		char[][] p = preenche.preencheTabuleiro(tabuleiro);
+	        
+			metodo.imprimirTabuleiro();
+			
+
+			
+			System.out.println("Obrigada por jogar!");
+		}
+
 		
-		
-		coloca.colocaPalavra(palavraSelecionada, p);
-		coloca.colocaPalavra(palavraSelecionada2, p);
-		
-		imprime.imprimirTabuleiro(tabuleiro);
-		
-		System.out.println("Qual a palavra 1? ");
-		
-		dica.tentativas(palavraSelecionada);
-		
-		System.out.println("Qual a palavra 2? ");
-		
-		dica2.tentativas(palavraSelecionada2);
 		
 		
 }
 	
 
-	}
+	
