@@ -1,26 +1,26 @@
-package atividade;
+package Atividade;
 
 import java.util.Scanner;
 
 public class Dicas {
 
-	void tentativas ( String palavraSelecionada) {
+	private int tentativas = 1;
+	private int cont = 1;
+	
+	void tentativas (String palavraSelecionada) {
 		
 		Scanner scanner = new Scanner (System.in);
 		
-		int tentativas = 1;
-		
-	    Boolean acertou = false;
-	    
 	    while (true) { 
-	    	
+	    
+	    	 System.out.println("qual é a palavra "+ cont);
 	    	 String tenta = scanner.nextLine();
 	    	 
 	    	 if(tenta.equals(palavraSelecionada)){
 	    		 
-	                System.out.println("Você acertou com " + tentativas + " tentativas");
-	                acertou = true;
-	                break;
+	                System.out.println("Você acertou a palavra " + cont + "com " + tentativas + " tentativas");
+	                
+	                break; 
 	            }
 
 	            else{
@@ -40,14 +40,10 @@ public class Dicas {
 	                    continue;
 	                }
 	            }
-	    	
+	    	 cont++;
            
         }
 	
 }
 	
 }
-
-
-
-
