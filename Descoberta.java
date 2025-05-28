@@ -1,21 +1,21 @@
-package atividade;
+package Atividade;
 
 import java.util.Scanner;
 
 public class Descoberta {
 	
-    public static void main(String[] args) {
+    public void inicia () {
     	
     	Scanner scanner = new Scanner (System.in);
-    	DescobertaMetodos descobertaMetodos = new DescobertaMetodos ();
-    	SelecionarPalavras selecionaPalavra = new SelecionarPalavras ();
+    	
+    	Metodos metodosCacaPalavras = new Metodos ();
     	Dicas dicas = new Dicas ();
     	
-;        System.err.println("Bem-vindo ao Jogo da Descobeta");
+        System.err.println("Bem-vindo ao Jogo da Descobeta");
 
-
-        String palavraSelecionada = selecionaPalavra.selecionarPalavra();
-        String palavraEmbaralhada = descobertaMetodos.embaralharPalavras(palavraSelecionada);
+        
+        String palavraSelecionada = metodosCacaPalavras.selecionarPalavra();
+        String palavraEmbaralhada = metodosCacaPalavras.embaralharPalavras(palavraSelecionada);
 
         System.out.println("Qual a palavra " + palavraEmbaralhada + "?");
         
@@ -23,7 +23,7 @@ public class Descoberta {
         dicas.tentativas(palavraSelecionada);
       
        
-
+ 
     }
     
 }
